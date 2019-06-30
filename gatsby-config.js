@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Dimension V2",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Dimension by HTML5 UP"
+    title: "South Shields Sailing Club",
+    author: "Nick Martin",
+    description: "A simple website for South Shields Sailing Club built using a template made by HTML5 UP"
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_TOKEN
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -15,7 +22,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sass',

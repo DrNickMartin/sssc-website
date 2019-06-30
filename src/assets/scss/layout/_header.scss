@@ -48,8 +48,8 @@
 		}
 
 		.logo {
-			width: 5.5rem;
-			height: 5.5rem;
+			width: 6rem;
+			height: 6rem;
 			line-height: 5.5rem;
 			border: solid _size(border-width) _palette(border);
 			border-radius: 100%;
@@ -59,6 +59,12 @@
 					font-size: 2rem;
 				}
 			}
+		}
+
+		.sclogo {
+			height: 5rem;
+			margin-top: 0.5rem;
+			margin-left: 0.3rem;
 		}
 
 		.content {
@@ -206,6 +212,12 @@
 						font-size: 1.75rem;
 					}
 				}
+			}
+
+			.sclogo {
+				height: 4rem;
+				margin-top: 0.3rem;
+				margin-left: 0.3rem;
 			}
 
 			.content {

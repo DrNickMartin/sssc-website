@@ -1,4 +1,5 @@
 import React from 'react'
+import YouTube from 'react-youtube'
 import Layout from '../components/layout'
 
 import Header from '../components/Header'
@@ -89,7 +90,26 @@ class IndexPage extends React.Component {
     }
   }
 
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    // event.target.mute();
+  }
+  
+  _onEnd(event) {
+    event.target.playVideo();
+  }
+
   render() {
+
+    const videoOptions = {
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        controls: 0,
+        rel: 0,
+        showinfo: 0
+      }
+    };
+
     return (
       <Layout location={this.props.location}>
         <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
@@ -105,7 +125,18 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-          <div id="bg"></div>
+          {/* <div id="bg"></div> */}
+          <div className="video-background">
+            <div className="video-foreground">
+                <YouTube
+                  videoId="Wyx9wl-xTEI"
+                  opts={videoOptions}
+                  className="video-iframe"
+                  onReady={this._onReady}
+                  onEnd={this._onEnd}
+                />
+            </div>
+          </div>
         </div>
       </Layout>
     )

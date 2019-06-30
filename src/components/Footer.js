@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Footer = (props) => (
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
-        <p className="copyright">&copy; Gatsby Starter - Dimension. Design: <a href="https://html5up.net">HTML5 UP</a>. Built with: <a href="https://www.gatsbyjs.org/">Gatsby.js</a></p>
+        <p className="copyright">&copy; South Shields Sailing Club. Made with <span>&#9829;</span> by <a href="https://github.com/DrNickMartin">Nick Martin</a>. Based a <a href="https://html5up.net">HTML5 UP</a> template.</p>
     </footer>
 )
 
